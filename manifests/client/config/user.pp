@@ -46,7 +46,7 @@ define ssh::client::config::user(
       }
     }
   }
-  
+
   file { $_target:
     ensure  => $_files_ensure,
     owner   => $name,
