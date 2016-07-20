@@ -1,6 +1,6 @@
 class ssh::params {
   case $::osfamily {
-    debian: {
+    'Debian': {
       $server_package_name = 'openssh-server'
       $client_package_name = 'openssh-client'
       $sshd_dir = '/etc/ssh'
@@ -10,7 +10,7 @@ class ssh::params {
       $service_name = 'ssh'
       $sftp_server_path = '/usr/lib/openssh/sftp-server'
     }
-    redhat: {
+    'RedHat': {
       $server_package_name = 'openssh-server'
       $client_package_name = 'openssh-clients'
       $sshd_dir = '/etc/ssh'
@@ -20,7 +20,7 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = '/usr/libexec/openssh/sftp-server'
     }
-    freebsd: {
+    'FreeBSD': {
       $server_package_name = undef
       $client_package_name = undef
       $sshd_dir = '/etc/ssh'
@@ -30,7 +30,7 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
     }
-    openbsd: {
+    'OpenBSD': {
       $server_package_name = undef
       $client_package_name = undef
       $sshd_dir = '/etc/ssh'
@@ -40,7 +40,7 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
     }
-    archlinux: {
+    'ArchLinux': {
       $server_package_name = 'openssh'
       $client_package_name = 'openssh'
       $sshd_dir = '/etc/ssh'
@@ -50,7 +50,7 @@ class ssh::params {
       $service_name = 'sshd.service'
       $sftp_server_path = '/usr/lib/ssh/sftp-server'
     }
-    suse: {
+    'Suse': {
       $server_package_name = 'openssh'
       $client_package_name = 'openssh'
       $sshd_dir = '/etc/ssh'
@@ -71,7 +71,7 @@ class ssh::params {
         }
       }
     }
-    solaris: {
+    'Solaris': {
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
